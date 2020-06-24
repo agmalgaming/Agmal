@@ -1,11 +1,25 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorPink3</item>
+        <item name="colorPrimaryDark">@color/colorPink3</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="colorSurface">@color/colorPutih1</item>
+        <item name="colorOnSurface">#fab7d6</item>
+
+        <item name="android:fontFamily">@font/neufreit_extra_bold</item>
+
+    </style>
+
+    <style name="IniTextApp">
+        <item name="fontFamily">@font/neufreit_extra_bold</item>
+    </style>
+    <style name="IniTextAppNavDrawer">
+        <item name="android:fontFamily">@font/neufreit_extra_bold</item>
+        <item name="android:textSize">18sp</item>
     </style>
 
 </resources>

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#dedede"
+        android:background="#fab7d6"
         android:layout_margin="2dp"
         android:gravity="center">
         <ImageView
@@ -24,8 +24,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nama Hero"
-            android:textColor="#000"
-            android:textSize="16sp"
+            android:textColor="#f576ab"
+            android:textSize="18sp"
             android:textAlignment="center"/>
 
         <TextView
@@ -33,6 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Class Hero"
+            android:textColor="#99F576AB"
             android:textSize="12sp"/>
     </LinearLayout>
 

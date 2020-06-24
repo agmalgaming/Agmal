@@ -3,4 +3,12 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="colorPink1">#fab7d6</color>
+    <color name="colorPink2">#f997c0</color>
+    <color name="colorPink3">#f576ab</color>
+
+    <color name="colorPutih1">#e8eff5</color>
+    <color name="colorPutih2">#cedde4</color>
+    <color name="colorPutih3">#b7d3df</color>
 </resources>

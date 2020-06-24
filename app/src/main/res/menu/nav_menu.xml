@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_hero_menu"
+            android:title="All Hero" />
+        <item
+            android:id="@+id/nav_item_menu"
+            android:title="Item" />
+        <item
+            android:id="@+id/nav_emblem_menu"
+            android:title="Emblem" />
+    </group>
+
+    <item android:title="Hero Kategori">
+        <menu>
+            <group
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_fighter_menu"
+                    android:title="Fighter" />
+                <item
+                    android:id="@+id/nav_support_menu"
+                    android:title="Support" />
+                <item
+                    android:id="@+id/nav_mage_menu"
+                    android:title="Mage" />
+                <item
+                    android:id="@+id/nav_marksman_menu"
+                    android:title="Marksman" />
+                <item
+                    android:id="@+id/nav_tank_menu"
+                    android:title="Tank" />
+                <item
+                    android:id="@+id/nav_assassin_menu"
+                    android:title="Assassin" />
+            </group>
+        </menu>
+
+    </item>
+
+</menu>

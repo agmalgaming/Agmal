@@ -25,6 +25,9 @@ class HeroDetailActivity : AppCompatActivity(), SkillAdapter.ItemClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hero_detail)
 
+        setSupportActionBar(toolbar_heroDetail)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         heroIDExtra = intent.getStringExtra("HERO_ID").toString()
         skillList = ArrayList()
 
@@ -67,6 +70,8 @@ class HeroDetailActivity : AppCompatActivity(), SkillAdapter.ItemClickListener {
                 tv_attckSpeed_heroDetail.text = attack_speed
                 tv_hpRegen_heroDetail.text = hp_regen_rate
                 tv_manaRegen_heroDetail.text = mana_regen_rate
+
+                supportActionBar?.title = heroName
 
                 Picasso.get().load(heroIconUri).into(iv_heroIcon_heroDetail)
 

@@ -3,4 +3,16 @@
 
     <string name="openDrawerNavigation">Open drawer navigation</string>
     <string name="closeDrawerNavigation">Close drawer navigation</string>
+
+    <!--  Base Attributes Hero  -->
+    <string name="movement_speed">Movement speed:</string>
+    <string name="physical_attack">Physical attack:</string>
+    <string name="physical_defense">Physical defense:</string>
+    <string name="magic_power">Magic power:</string>
+    <string name="magic_resistance">Magic resistance:</string>
+    <string name="hp">HP:</string>
+    <string name="mana">Mana:</string>
+    <string name="attack_speed">Attack speed:</string>
+    <string name="hp_regen_rate">HP regen:</string>
+    <string name="mana_regen_rate">Mana regen:</string>
 </resources>

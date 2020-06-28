@@ -13,6 +13,7 @@
         android:orientation="vertical"
         android:background="#fab7d6"
         android:layout_margin="2dp"
+        android:padding="4dp"
         android:gravity="center">
         <ImageView
             android:id="@+id/iv_heroIcon_rvHero"
@@ -33,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Class Hero"
-            android:textColor="#99F576AB"
+            android:textColor="#fff"
             android:textSize="12sp"/>
     </LinearLayout>
 

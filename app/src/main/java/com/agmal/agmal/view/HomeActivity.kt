@@ -1,5 +1,6 @@
 package com.agmal.agmal.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -15,7 +16,7 @@ import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_home.*
 import org.json.JSONObject
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(), HeroAdapter.ItemClickListener {
 
     private lateinit var heroList: ArrayList<HeroModel>
     private lateinit var heroAdapter: HeroAdapter
@@ -135,10 +136,16 @@ class HomeActivity : AppCompatActivity() {
 
     private fun setDataToRecyclerView(){
         heroAdapter = HeroAdapter()
-        heroAdapter.heroAdapter(heroList)
+        heroAdapter.heroAdapter(heroList,this)
         rv_hero_home.apply {
             layoutManager = GridLayoutManager(this@HomeActivity,4)
             this.adapter = heroAdapter
         }
+    }
+
+    override fun itemClickListener(heroModel: HeroModel) {
+        val intent = Intent(this,HeroDetailActivity::class.java)
+        intent.putExtra("HERO_ID",heroModel.heroID)
+        startActivity(intent)
     }
 }

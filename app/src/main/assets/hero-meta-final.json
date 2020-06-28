@@ -895,7 +895,7 @@
          "skills":[
             {
                "skill_name":"Deadly Thorns",
-               "skill_icon":"URL",
+               "skill_icon":"https://cdn.statically.io/img/i.ibb.co/7Rqv6PF/Deadly-Thorns.png",
                "type":"passive",
                "cooldown":"null",
                "manacost":"null",
@@ -903,7 +903,7 @@
             },
             {
                "skill_name":"Ancient Seed",
-               "skill_icon":"URL",
+               "skill_icon":"https://cdn.statically.io/img/i.ibb.co/G5xZVxH/Ancient-Seed.png",
                "type":"active",
                "cooldown":"10.0 / 9.6 / 9.2 / 8.8 / 8.4 / 8.0",
                "manacost":"60 / 65 / 70 / 75 / 80 / 85",
@@ -919,7 +919,7 @@
             },
             {
                "skill_name":"Wrath Of Dryad",
-               "skill_icon":"URL",
+               "skill_icon":"https://cdn.statically.io/img/i.ibb.co/ySGDfCR/Wrath-of-Dryad.png",
                "type":"active",
                "cooldown":"40.0 / 36.0 / 32.0",
                "manacost":"150 / 200 / 250",
@@ -1099,7 +1099,7 @@
          "skills":[
             {
                "skill_name":"Overflowing",
-               "skill_icon":"URL",
+               "skill_icon":"https://cdn.statically.io/img/i.ibb.co/kKpJzpw/Overflowing.png",
                "type":"passive",
                "cooldown":"null",
                "manacost":"null",
@@ -1107,7 +1107,7 @@
             },
             {
                "skill_name":"Sanguine Claws",
-               "skill_icon":"URL",
+               "skill_icon":"https://cdn.statically.io/img/i.ibb.co/xYZzq4B/Sanguine-Claws.png",
                "type":"active",
                "cooldown":"12.0 / 11.2 / 10.4 / 9.6 / 8.8 / 8.0",
                "manacost":"95 / 100 / 105 / 110 / 115 / 120",
@@ -1115,7 +1115,7 @@
             },
             {
                "skill_name":"Bat Impact",
-               "skill_icon":"URL",
+               "skill_icon":"https://cdn.statically.io/img/i.ibb.co/TbNSbPZ/Bat-Impact.png",
                "type":"active",
                "cooldown":"1.5",
                "manacost":"75",
@@ -1123,7 +1123,7 @@
             },
             {
                "skill_name":"Bats Feast",
-               "skill_icon":"URL",
+               "skill_icon":"https://cdn.statically.io/img/i.ibb.co/xMpQrN1/Bats-Feast.png",
                "type":"active",
                "cooldown":"44.0 / 41.0 / 38.0",
                "manacost":"150 / 200 / 250",
@@ -1131,7 +1131,7 @@
             },
             {
                "skill_name":"Moonlit Waltz",
-               "skill_icon":"URL",
+               "skill_icon":"https://vignette.wikia.nocookie.net/mobile-legends/images/f/f1/Moonlit_Waltz.png/revision/latest?cb=20200406051214",
                "type":"active",
                "cooldown":"45.0",
                "manacost":"null",
@@ -5098,8 +5098,8 @@
          "class":"Marksman",
          "skills":[
             {
-               "skill_name":"Iceland Companions",
-               "skill_icon":"URL",
+               "skill_name":"We Are Friends",
+               "skill_icon":"https://debgameku.com/wp-content/uploads/2020/04/We-Are-Friends.png",
                "type":"passive",
                "cooldown":"null",
                "manacost":"null",
@@ -5107,7 +5107,7 @@
             },
             {
                "skill_name":"Bite 'Em, Kupa!",
-               "skill_icon":"URL",
+               "skill_icon":"https://debgameku.com/wp-content/uploads/2020/04/Bit-Em-Kupa.png",
                "type":"active",
                "cooldown":"6.5s",
                "manacost":"50 / 60 / 70 80",
@@ -5115,7 +5115,7 @@
             },
             {
                "skill_name":"Kupa, Help!",
-               "skill_icon":"URL",
+               "skill_icon":"https://debgameku.com/wp-content/uploads/2020/04/Kupa-Help.png",
                "type":"active",
                "cooldown":"6.5s",
                "manacost":"80 / 90 / 100 / 110",
@@ -5123,7 +5123,7 @@
             },
             {
                "skill_name":"Popol's Suprise",
-               "skill_icon":"URL",
+               "skill_icon":"https://debgameku.com/wp-content/uploads/2020/04/Popols-Surprise.png",
                "type":"active",
                "cooldown":"1.5s",
                "manacost":"60 / 50 / 40 / 30",
@@ -5131,7 +5131,7 @@
             },
             {
                "skill_name":"We Are Angry!",
-               "skill_icon":"URL",
+               "skill_icon":"https://debgameku.com/wp-content/uploads/2020/04/We-Are-Angry.png",
                "type":"active",
                "cooldown":"38.0s / 35.0s / 32.0s",
                "manacost":"100 / 120 / 140",

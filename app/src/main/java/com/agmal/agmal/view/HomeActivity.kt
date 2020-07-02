@@ -33,6 +33,7 @@ class HomeActivity : AppCompatActivity(), HeroAdapter.ItemClickListener {
         titleToolbar = "Heroes - All Hero"
         supportActionBar?.title = titleToolbar
         mMenu = navDrawer_home.menu
+        mMenu.findItem(R.id.nav_itemKategori_menu).setVisible(false)
         classHero = ""
 
         /** DRAWER NAVIGATION **/
@@ -53,6 +54,11 @@ class HomeActivity : AppCompatActivity(), HeroAdapter.ItemClickListener {
         object : NavigationView.OnNavigationItemSelectedListener {
             override fun onNavigationItemSelected(item: MenuItem): Boolean {
                 when(item.itemId){
+                    R.id.nav_item_menu->{
+                        val intent = Intent(this@HomeActivity,ItemsActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                        startActivity(intent)
+                    }
                     R.id.nav_hero_menu ->{
                         classHero = ""
                         titleToolbar = "Heroes - All Hero"

@@ -12,7 +12,8 @@
             android:title="Emblem" />
     </group>
 
-    <item android:title="Hero Kategori">
+    <item android:title="Hero Kategori"
+        android:id="@+id/nav_heroKategori_menu">
         <menu>
             <group
                 android:checkableBehavior="single">
@@ -36,7 +37,42 @@
                     android:title="Assassin" />
             </group>
         </menu>
+    </item>
 
+    <item android:title="Item Kategori"
+        android:id="@+id/nav_itemKategori_menu">
+        <menu>
+            <group
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_Defenser_menu"
+                    android:title="Defense" />
+                <item
+                    android:id="@+id/nav_Movement_menu"
+                    android:title="Movement" />
+                <item
+                    android:id="@+id/nav_Roaming_menu"
+                    android:title="Roaming" />
+                <item
+                    android:id="@+id/nav_Magic_menu"
+                    android:title="Magic" />
+                <item
+                    android:id="@+id/nav_Attack_menu"
+                    android:title="Attack" />
+                <item
+                    android:id="@+id/nav_Jungling_menu"
+                    android:title="Jungling" />
+                <item
+                    android:id="@+id/nav_tier1_menu"
+                    android:title="Tier 1" />
+                <item
+                    android:id="@+id/nav_tier2_menu"
+                    android:title="Tier 2" />
+                <item
+                    android:id="@+id/nav_tier3_menu"
+                    android:title="Tier 3" />
+            </group>
+        </menu>
     </item>
 
 </menu>

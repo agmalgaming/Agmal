@@ -17,13 +17,18 @@ import com.agmal.agmal.model.ItemsModel
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_items.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.json.JSONObject
+import java.io.InputStream
 
 class ItemsActivity : AppCompatActivity() {
 
     private lateinit var mMenu: Menu
     private lateinit var itemAdapter: ItemAdapter
-    private lateinit var itemsArrayList: ArrayList<ItemsModel>
     private lateinit var mItemCategory: String
     private lateinit var mItemTier: String
 
@@ -47,9 +52,9 @@ class ItemsActivity : AppCompatActivity() {
         menuToggle.syncState()
         navDrawer_itemsActv.setNavigationItemSelectedListener(navigationItemSelectedListener())
 
-        itemsArrayList = ArrayList()
-
-        getDataItemsFromJson()
+        CoroutineScope(IO).launch {
+            getDataItemsFromJson()
+        }
     }
 
     private fun navigationItemSelectedListener() =
@@ -59,6 +64,13 @@ class ItemsActivity : AppCompatActivity() {
                     R.id.nav_hero_menu->{
                         val intent = Intent(this@ItemsActivity, HomeActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                        drawer_layout_items.closeDrawer(GravityCompat.START)
+                        startActivity(intent)
+                    }
+                    R.id.nav_emblem_menu->{
+                        val intent = Intent(this@ItemsActivity, EmblemActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                        drawer_layout_items.closeDrawer(GravityCompat.START)
                         startActivity(intent)
                     }
                     R.id.nav_item_menu->{
@@ -102,14 +114,27 @@ class ItemsActivity : AppCompatActivity() {
                         mItemTier = "3"
                     }
                 }
-                getDataItemsFromJson()
-                drawer_layout_items.closeDrawer(GravityCompat.START)
+                CoroutineScope(IO).launch {
+                    getDataItemsFromJson()
+                }
                 return true
             }
         }
 
-    private fun getDataItemsFromJson(){
+    private fun iniInputStream():InputStream{
         val inputStream = assets.open("item-meta-final.json")
+        return inputStream
+    }
+
+    private suspend fun setDataToMainthread(itemsArrayList:List<ItemsModel>){
+        withContext(Main){
+            settingRecyclerView(itemsArrayList)
+        }
+    }
+
+    private suspend fun getDataItemsFromJson(){
+        val itemsArrayList: ArrayList<ItemsModel> = ArrayList()
+        val inputStream = iniInputStream()
         val json = inputStream.bufferedReader().use { it.readText() }
         val data = JSONObject(json).getJSONArray("data")
 
@@ -150,10 +175,10 @@ class ItemsActivity : AppCompatActivity() {
                 )
             }
         }
-        settingRecyclerView()
+        setDataToMainthread(itemsArrayList)
     }
 
-    private fun settingRecyclerView(){
+    private fun settingRecyclerView(itemsArrayList:List<ItemsModel>){
         itemAdapter = ItemAdapter()
         itemAdapter.itemAdapter(itemsArrayList)
         rv_item_items.apply {

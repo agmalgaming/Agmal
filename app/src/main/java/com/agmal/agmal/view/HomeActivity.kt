@@ -14,11 +14,16 @@ import com.agmal.agmal.adapter.HeroAdapter
 import com.agmal.agmal.model.HeroModel
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.json.JSONObject
+import java.io.InputStream
 
 class HomeActivity : AppCompatActivity(), HeroAdapter.ItemClickListener {
 
-    private lateinit var heroList: ArrayList<HeroModel>
     private lateinit var heroAdapter: HeroAdapter
     private lateinit var classHero: String
     private lateinit var titleToolbar: String
@@ -45,8 +50,9 @@ class HomeActivity : AppCompatActivity(), HeroAdapter.ItemClickListener {
         menuToggle.syncState()
         navDrawer_home.setNavigationItemSelectedListener(navigationItemSelectedListener())
 
-        heroList = ArrayList()
-        getDataFromJson()
+        CoroutineScope(IO).launch {
+            getDataFromJson()
+        }
 
     }
 
@@ -55,7 +61,14 @@ class HomeActivity : AppCompatActivity(), HeroAdapter.ItemClickListener {
             override fun onNavigationItemSelected(item: MenuItem): Boolean {
                 when(item.itemId){
                     R.id.nav_item_menu->{
+                        drawer_layout_home.closeDrawer(GravityCompat.START)
                         val intent = Intent(this@HomeActivity,ItemsActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                        startActivity(intent)
+                    }
+                    R.id.nav_emblem_menu->{
+                        drawer_layout_home.closeDrawer(GravityCompat.START)
+                        val intent = Intent(this@HomeActivity,EmblemActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                         startActivity(intent)
                     }
@@ -95,8 +108,10 @@ class HomeActivity : AppCompatActivity(), HeroAdapter.ItemClickListener {
                         supportActionBar?.title = titleToolbar
                     }
                 }
-                getDataFromJson()
-                drawer_layout_home.closeDrawer(GravityCompat.START)
+                CoroutineScope(IO).launch {
+                    getDataFromJson()
+                }
+                //drawer_layout_home.closeDrawer(GravityCompat.START)
                 return true
             }
         }
@@ -106,8 +121,20 @@ class HomeActivity : AppCompatActivity(), HeroAdapter.ItemClickListener {
         navDrawer_home.setCheckedItem(R.id.nav_hero_menu)
     }
 
-    private fun getDataFromJson(){
+    private fun iniInputStream(): InputStream{
         val inputStream = assets.open("hero-meta-final.json")
+        return inputStream
+    }
+
+    private suspend fun setDataToMain(heroList: List<HeroModel>){
+        withContext(Main){
+            setDataToRecyclerView(heroList)
+        }
+    }
+
+    private suspend fun getDataFromJson(){
+        val heroList: ArrayList<HeroModel> = ArrayList()
+        val inputStream = iniInputStream()
         val json = inputStream.bufferedReader().use { it.readText() }
         val data = JSONObject(json).getJSONArray("data")
         heroList.clear()
@@ -120,7 +147,7 @@ class HomeActivity : AppCompatActivity(), HeroAdapter.ItemClickListener {
             val heroRelease = heroes.getString("release_year")
 
             if(classHero.isNotEmpty()){
-                if(heroClass == filterHero()){
+                if(heroClass == classHero){
                     heroList.add(
                         HeroModel(heroID,heroName,heroClass,heroIcon,heroRelease)
                     )
@@ -132,15 +159,10 @@ class HomeActivity : AppCompatActivity(), HeroAdapter.ItemClickListener {
                 )
             }
         }
-        Log.w("LIST HERO",heroList.toString())
-        setDataToRecyclerView()
+        setDataToMain(heroList)
     }
 
-    private fun filterHero(): String{
-        return classHero
-    }
-
-    private fun setDataToRecyclerView(){
+    private fun setDataToRecyclerView(heroList: List<HeroModel>){
         heroAdapter = HeroAdapter()
         heroAdapter.heroAdapter(heroList,this)
         rv_hero_home.apply {

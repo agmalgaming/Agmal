@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:checkableBehavior="single">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group
+        android:checkableBehavior="single">
         <item
             android:id="@+id/nav_hero_menu"
             android:title="All Hero" />
@@ -12,7 +14,7 @@
             android:title="Emblem" />
     </group>
 
-    <item android:title="Hero Kategori"
+    <item android:title="Kategori"
         android:id="@+id/nav_heroKategori_menu">
         <menu>
             <group
@@ -39,7 +41,7 @@
         </menu>
     </item>
 
-    <item android:title="Item Kategori"
+    <item android:title="Kategori"
         android:id="@+id/nav_itemKategori_menu">
         <menu>
             <group
@@ -74,5 +76,40 @@
             </group>
         </menu>
     </item>
+
+    <group android:checkableBehavior="single">
+        <item android:title="Halo"
+            android:visible="false">
+            <menu>
+                <item
+                    android:id="@+id/nav_physcEmblem"
+                    android:title="Physical Emblem"/>
+                <item
+                    android:id="@+id/nav_magicalEmblem"
+                    android:title="Magical Emblem" />
+                <item
+                    android:id="@+id/nav_tankEmblem"
+                    android:title="Tank Emblem" />
+                <item
+                    android:id="@+id/nav_jungleEmblem"
+                    android:title="Jungle Emblem" />
+                <item
+                    android:id="@+id/nav_assassinEmblem"
+                    android:title="Assassin Emblem" />
+                <item
+                    android:id="@+id/nav_mageEmblem"
+                    android:title="Mage Emblem" />
+                <item
+                    android:id="@+id/nav_fighterEmblem"
+                    android:title="Fighter Emblem" />
+                <item
+                    android:id="@+id/nav_marksmanEmblem"
+                    android:title="Marksman Emblem" />
+                <item
+                    android:id="@+id/nav_supportEmblem"
+                    android:title="Support Emblem" />
+            </menu>
+        </item>
+    </group>
 
 </menu>

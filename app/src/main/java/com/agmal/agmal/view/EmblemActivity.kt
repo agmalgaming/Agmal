@@ -3,6 +3,7 @@ package com.agmal.agmal.view
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -24,6 +25,7 @@ import com.agmal.agmal.model.SubtalentsModel
 import com.google.android.material.navigation.NavigationView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_emblem.*
+import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_items.*
 import org.json.JSONObject
 
@@ -100,10 +102,21 @@ class EmblemActivity : AppCompatActivity(), TalentAdapter.ItemClickListener {
         getDataEmblem(emblemKategori)
     }
 
+    override fun onStart() {
+        super.onStart()
+        navDrawer_emblem.setCheckedItem(R.id.nav_hero_menu)
+    }
+
     private fun navigationItemSelectedListener() =
         object : NavigationView.OnNavigationItemSelectedListener {
             override fun onNavigationItemSelected(item: MenuItem): Boolean {
                 when(item.itemId){
+                    R.id.nav_meta_menu->{
+                        drawer_layout_home.closeDrawer(GravityCompat.START)
+                        val intent = Intent(this@EmblemActivity,MetaActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                        startActivity(intent)
+                    }
                     R.id.nav_hero_menu->{
                         val intent = Intent(this@EmblemActivity, HomeActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
@@ -185,6 +198,14 @@ class EmblemActivity : AppCompatActivity(), TalentAdapter.ItemClickListener {
                         attr3 = "cd_reduction"
                         attr4 = "movement_speed"
                         attr5 = "hp"
+                    }
+                    R.id.nav_rateus->{
+                        startActivity(
+                            Intent(
+                                Intent.ACTION_VIEW,
+                                Uri.parse("market://details?id=$packageName")
+                            )
+                        )
                     }
                 }
                 getDataEmblem(emblemKategori)

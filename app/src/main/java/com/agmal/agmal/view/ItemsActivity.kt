@@ -1,6 +1,7 @@
 package com.agmal.agmal.view
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -58,10 +59,21 @@ class ItemsActivity : AppCompatActivity(), ItemAdapter.itemClickListener {
         }
     }
 
+    override fun onStart() {
+        super.onStart()
+        navDrawer_itemsActv.setCheckedItem(R.id.nav_hero_menu)
+    }
+
     private fun navigationItemSelectedListener() =
         object : NavigationView.OnNavigationItemSelectedListener {
             override fun onNavigationItemSelected(item: MenuItem): Boolean {
                 when(item.itemId){
+                    R.id.nav_meta_menu->{
+                        drawer_layout_home.closeDrawer(GravityCompat.START)
+                        val intent = Intent(this@ItemsActivity,MetaActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                        startActivity(intent)
+                    }
                     R.id.nav_hero_menu->{
                         val intent = Intent(this@ItemsActivity, HomeActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
@@ -113,6 +125,14 @@ class ItemsActivity : AppCompatActivity(), ItemAdapter.itemClickListener {
                     R.id.nav_tier3_menu->{
                         mItemCategory = ""
                         mItemTier = "3"
+                    }
+                    R.id.nav_rateus->{
+                        startActivity(
+                            Intent(
+                                Intent.ACTION_VIEW,
+                                Uri.parse("market://details?id=$packageName")
+                            )
+                        )
                     }
                 }
                 CoroutineScope(IO).launch {

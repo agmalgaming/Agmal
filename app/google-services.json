@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "647416024871",
+    "firebase_url": "https://agmal-apps.firebaseio.com",
+    "project_id": "agmal-apps",
+    "storage_bucket": "agmal-apps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:647416024871:android:d0b2aea61504e9ba18e302",
+        "android_client_info": {
+          "package_name": "com.agmal.agmal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "647416024871-or64li3rhjjgt5s75q0cpg5b7ldm8o1q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBApfMd9oYYSnjo0p5TMYs_EC4XHhJZ174"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "647416024871-or64li3rhjjgt5s75q0cpg5b7ldm8o1q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

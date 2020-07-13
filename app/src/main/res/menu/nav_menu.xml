@@ -4,6 +4,9 @@
     <group
         android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_meta_menu"
+            android:title="Home" />
+        <item
             android:id="@+id/nav_hero_menu"
             android:title="All Hero" />
         <item
@@ -109,6 +112,16 @@
                 <item
                     android:id="@+id/nav_supportEmblem"
                     android:title="Support Emblem" />
+            </group>
+        </menu>
+    </item>
+
+    <item
+        android:title="Communicate">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/nav_rateus"
+                    android:title="Rate Us"/>
             </group>
         </menu>
     </item>

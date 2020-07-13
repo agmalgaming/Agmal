@@ -1,12 +1,12 @@
 package com.agmal.agmal.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import com.agmal.agmal.R
@@ -21,6 +21,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
 import java.io.InputStream
+
 
 class HomeActivity : AppCompatActivity(), HeroAdapter.ItemClickListener {
 
@@ -61,6 +62,12 @@ class HomeActivity : AppCompatActivity(), HeroAdapter.ItemClickListener {
         object : NavigationView.OnNavigationItemSelectedListener {
             override fun onNavigationItemSelected(item: MenuItem): Boolean {
                 when(item.itemId){
+                    R.id.nav_meta_menu->{
+                        drawer_layout_home.closeDrawer(GravityCompat.START)
+                        val intent = Intent(this@HomeActivity,MetaActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                        startActivity(intent)
+                    }
                     R.id.nav_item_menu->{
                         drawer_layout_home.closeDrawer(GravityCompat.START)
                         val intent = Intent(this@HomeActivity,ItemsActivity::class.java)
@@ -107,6 +114,14 @@ class HomeActivity : AppCompatActivity(), HeroAdapter.ItemClickListener {
                         classHero = item.title.toString()
                         titleToolbar = "Heroes - "+classHero
                         supportActionBar?.title = titleToolbar
+                    }
+                    R.id.nav_rateus->{
+                        startActivity(
+                            Intent(
+                                Intent.ACTION_VIEW,
+                                Uri.parse("market://details?id=$packageName")
+                            )
+                        )
                     }
                 }
                 CoroutineScope(IO).launch {

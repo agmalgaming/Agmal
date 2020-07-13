@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.rv_item_layout.view.*
 class ItemAdapter:RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
 
     private lateinit var itemList: List<ItemsModel>
+    private lateinit var mClickItem: itemClickListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -24,11 +25,12 @@ class ItemAdapter:RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.onBind(itemList.get(position))
+        holder.onBind(itemList.get(position),mClickItem,position)
     }
 
-    fun itemAdapter(itemsModel: List<ItemsModel>){
+    fun itemAdapter(itemsModel: List<ItemsModel>,clickItem: itemClickListener){
         itemList = itemsModel
+        mClickItem = clickItem
     }
 
     inner class ViewHolder(v:View):RecyclerView.ViewHolder(v){
@@ -37,13 +39,21 @@ class ItemAdapter:RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
         val itemCategory = v.tv_itemCategory_rvHero
         val itemTier = v.tv_itemTier_rvHero
 
-        fun onBind(itemsModel: ItemsModel){
+        fun onBind(itemsModel: ItemsModel, clickItem: itemClickListener, position: Int){
             val mItemTiear = itemsModel.itemTier
 
             itemName.text = itemsModel.itemName
             itemCategory.text = itemsModel.itemCategory
             itemTier.text = "Tier $mItemTiear"
             Picasso.get().load(itemsModel.itemIcon).into(itemIcon)
+
+            itemView.setOnClickListener {
+                clickItem.onItemClickListener(itemsModel,position)
+            }
         }
+    }
+
+    interface itemClickListener{
+        fun onItemClickListener(itemsModel: ItemsModel, position: Int)
     }
 }

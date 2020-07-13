@@ -408,7 +408,11 @@
          "id":"005",
          "modifiers":[
             {
-
+               "physical_pen":"13.5",
+               "physical_attack":"15",
+               "critical_strike_chance":"3.5%",
+               "cd_reduction":"5%",
+               "movement_speed":"2%"
             }
          ],
          "data":[
@@ -713,7 +717,11 @@
          "id":"008",
          "modifiers":[
             {
-
+               "hybrid_regen":"10",
+               "hybrid_pen":"12",
+               "cd_reduction":"5%",
+               "movement_speed":"4%",
+               "hp":"183"
             }
          ],
          "data":[

@@ -25,7 +25,7 @@ import kotlinx.coroutines.withContext
 import org.json.JSONObject
 import java.io.InputStream
 
-class ItemsActivity : AppCompatActivity() {
+class ItemsActivity : AppCompatActivity(), ItemAdapter.itemClickListener {
 
     private lateinit var mMenu: Menu
     private lateinit var itemAdapter: ItemAdapter
@@ -39,6 +39,7 @@ class ItemsActivity : AppCompatActivity() {
         setSupportActionBar(toolbar_items)
         mMenu = navDrawer_itemsActv.menu
         mMenu.findItem(R.id.nav_heroKategori_menu).setVisible(false)
+        mMenu.findItem(R.id.nav_emblemKategori_menu).setVisible(false)
 
         mItemCategory = ""
         mItemTier = ""
@@ -180,11 +181,14 @@ class ItemsActivity : AppCompatActivity() {
 
     private fun settingRecyclerView(itemsArrayList:List<ItemsModel>){
         itemAdapter = ItemAdapter()
-        itemAdapter.itemAdapter(itemsArrayList)
+        itemAdapter.itemAdapter(itemsArrayList,this)
         rv_item_items.apply {
             layoutManager = GridLayoutManager(this@ItemsActivity,3)
             this.adapter = itemAdapter
         }
     }
 
+    override fun onItemClickListener(itemsModel: ItemsModel, position: Int) {
+
+    }
 }

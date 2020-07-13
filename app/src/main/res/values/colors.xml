@@ -11,4 +11,14 @@
     <color name="colorPutih1">#e8eff5</color>
     <color name="colorPutih2">#cedde4</color>
     <color name="colorPutih3">#b7d3df</color>
+
+    <color name="colorPhysical">#cd3f2f</color>
+    <color name="colorMagic">#17abd5</color>
+    <color name="colorTank">#a36d44</color>
+    <color name="colorJungle">#cd3f2f</color>
+    <color name="colorAssassin">#cd3f2f</color>
+    <color name="colorMage">#cd3f2f</color>
+    <color name="colorFighter">#cd3f2f</color>
+    <color name="colorMaskman">#cd3f2f</color>
+    <color name="colorSupport">#cd3f2f</color>
 </resources>

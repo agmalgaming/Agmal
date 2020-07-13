@@ -77,13 +77,14 @@
         </menu>
     </item>
 
-    <group android:checkableBehavior="single">
-        <item android:title="Halo"
-            android:visible="false">
-            <menu>
+    <item
+        android:id="@+id/nav_emblemKategori_menu"
+        android:title="Kategori">
+        <menu>
+            <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/nav_physcEmblem"
-                    android:title="Physical Emblem"/>
+                    android:title="Physical Emblem" />
                 <item
                     android:id="@+id/nav_magicalEmblem"
                     android:title="Magical Emblem" />
@@ -108,8 +109,8 @@
                 <item
                     android:id="@+id/nav_supportEmblem"
                     android:title="Support Emblem" />
-            </menu>
-        </item>
-    </group>
+            </group>
+        </menu>
+    </item>
 
 </menu>

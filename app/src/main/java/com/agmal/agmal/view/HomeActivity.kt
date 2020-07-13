@@ -39,6 +39,7 @@ class HomeActivity : AppCompatActivity(), HeroAdapter.ItemClickListener {
         supportActionBar?.title = titleToolbar
         mMenu = navDrawer_home.menu
         mMenu.findItem(R.id.nav_itemKategori_menu).setVisible(false)
+        mMenu.findItem(R.id.nav_emblemKategori_menu).setVisible(false)
         classHero = ""
 
         /** DRAWER NAVIGATION **/

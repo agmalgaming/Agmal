@@ -60,6 +60,7 @@ class EmblemActivity : AppCompatActivity(), TalentAdapter.ItemClickListener {
 
         /** DRAWER NAVIGATION **/
         navDrawer_emblem.bringToFront()
+        navDrawer_emblem.setCheckedItem(R.id.nav_emblem_menu)
         val menuToggle = ActionBarDrawerToggle(
             this, drawer_layout_emblem, toolbar_emblem,
             R.string.openDrawerNavigation,R.string.closeDrawerNavigation)
@@ -104,7 +105,7 @@ class EmblemActivity : AppCompatActivity(), TalentAdapter.ItemClickListener {
 
     override fun onStart() {
         super.onStart()
-        navDrawer_emblem.setCheckedItem(R.id.nav_hero_menu)
+        navDrawer_emblem.setCheckedItem(R.id.nav_emblem_menu)
     }
 
     private fun navigationItemSelectedListener() =
@@ -112,7 +113,6 @@ class EmblemActivity : AppCompatActivity(), TalentAdapter.ItemClickListener {
             override fun onNavigationItemSelected(item: MenuItem): Boolean {
                 when(item.itemId){
                     R.id.nav_meta_menu->{
-                        drawer_layout_home.closeDrawer(GravityCompat.START)
                         val intent = Intent(this@EmblemActivity,MetaActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                         startActivity(intent)

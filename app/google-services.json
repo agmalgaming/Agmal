@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "647416024871",
-    "firebase_url": "https://agmal-apps.firebaseio.com",
-    "project_id": "agmal-apps",
-    "storage_bucket": "agmal-apps.appspot.com"
+    "project_number": "1019016713069",
+    "firebase_url": "https://agmal-app.firebaseio.com",
+    "project_id": "agmal-app",
+    "storage_bucket": "agmal-app.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:647416024871:android:d0b2aea61504e9ba18e302",
+        "mobilesdk_app_id": "1:1019016713069:android:d5271eaba7d41d3df88064",
         "android_client_info": {
           "package_name": "com.agmal.agmal"
         }
       },
       "oauth_client": [
         {
-          "client_id": "647416024871-or64li3rhjjgt5s75q0cpg5b7ldm8o1q.apps.googleusercontent.com",
+          "client_id": "1019016713069-55du512g1aavgpr2c4v43kfsentdkbkt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.agmal.agmal",
+            "certificate_hash": "0bbb534d61cf207d74c11ffcd92a497ff90b40ad"
+          }
+        },
+        {
+          "client_id": "1019016713069-uggudskbofhfdp7f9jbfeu7klcheq13i.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBApfMd9oYYSnjo0p5TMYs_EC4XHhJZ174"
+          "current_key": "AIzaSyCROpDjceJfL_3nrS17jWmTvuyNbeJoUWM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "647416024871-or64li3rhjjgt5s75q0cpg5b7ldm8o1q.apps.googleusercontent.com",
+              "client_id": "1019016713069-uggudskbofhfdp7f9jbfeu7klcheq13i.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -10,7 +10,9 @@
         android:id="@+id/tv_talentTitle_talentLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Title Subtalent"/>
+        android:text="Title Subtalent"
+        android:minLines="2"
+        android:maxLines="2"/>
 
     <ImageView
         android:id="@+id/iv_talentIcon_talentLayout"

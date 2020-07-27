@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="#fab7d6"
-    android:layout_marginBottom="4dp">
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/colorPink1"
+    android:layout_marginBottom="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,13 +30,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Title"
-                android:textColor="#000"
+                android:textColor="#f576ab"
                 android:textSize="18sp"/>
             <TextView
                 android:id="@+id/tv_metaKonten_metaLayout"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
+                android:textColor="#fff"
                 android:text="Review konten"
                 android:textSize="14sp"
                 android:ellipsize="end"
@@ -41,9 +45,4 @@
                 android:maxLines="3"/>
         </LinearLayout>
     </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#dedede"
-        android:layout_marginTop="4dp"/>
-</LinearLayout>
+</com.google.android.material.card.MaterialCardView>

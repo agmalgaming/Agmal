@@ -61,7 +61,7 @@ class ItemsActivity : AppCompatActivity(), ItemAdapter.itemClickListener {
 
     override fun onStart() {
         super.onStart()
-        navDrawer_itemsActv.setCheckedItem(R.id.nav_hero_menu)
+        navDrawer_itemsActv.setCheckedItem(R.id.nav_item_menu)
     }
 
     private fun navigationItemSelectedListener() =
@@ -141,6 +141,8 @@ class ItemsActivity : AppCompatActivity(), ItemAdapter.itemClickListener {
                 return true
             }
         }
+
+
 
     private fun iniInputStream():InputStream{
         val inputStream = assets.open("item-meta-final.json")
